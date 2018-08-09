@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Qxz-L2-iOy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ExpandableViewController-->
+        <scene sceneID="OAh-HM-u9J">
+            <objects>
+                <tableViewController storyboardIdentifier="ExpandableViewController" title="ExpandableViewController" id="Qxz-L2-iOy" customClass="ExpandableViewController" customModule="FoldingCell_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EFa-rR-GE3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellView" rowHeight="740" id="G8V-pu-whC" customClass="ExpandableCell" customModule="FoldingCell_Demo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="740"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G8V-pu-whC" id="dE8-9P-6Tf">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="740"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="beD-TV-t6O" userLabel="ForegroundView" customClass="ForegroundView" customModule="FoldingCell_Demo" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="7" width="560" height="165"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="165" id="7wm-eh-EEH"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uww-5a-0wx" userLabel="ContainerView" customClass="ContainerView" customModule="FoldingCell_Demo" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="180" width="560" height="565"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="565" id="JY9-1I-zqa"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Uww-5a-0wx" firstAttribute="leading" secondItem="dE8-9P-6Tf" secondAttribute="leading" constant="20" id="5YC-52-yam"/>
+                                        <constraint firstItem="beD-TV-t6O" firstAttribute="top" secondItem="dE8-9P-6Tf" secondAttribute="top" constant="7" id="Cm0-Mk-qiI"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uww-5a-0wx" secondAttribute="trailing" constant="20" id="JRg-bF-6LP"/>
+                                        <constraint firstItem="beD-TV-t6O" firstAttribute="leading" secondItem="dE8-9P-6Tf" secondAttribute="leading" constant="20" id="acH-ze-fTN"/>
+                                        <constraint firstAttribute="trailing" secondItem="beD-TV-t6O" secondAttribute="trailing" constant="20" id="bOQ-hW-Llt"/>
+                                        <constraint firstItem="Uww-5a-0wx" firstAttribute="top" secondItem="dE8-9P-6Tf" secondAttribute="top" constant="180" id="c2c-V6-88H"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="itemCount">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backViewColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="container" destination="Uww-5a-0wx" id="glI-Cb-5fo"/>
+                                    <outlet property="containerView" destination="Uww-5a-0wx" id="GrC-wH-wKQ"/>
+                                    <outlet property="containerViewTop" destination="c2c-V6-88H" id="wRE-Jc-YWm"/>
+                                    <outlet property="foreground" destination="beD-TV-t6O" id="pj2-nE-6O0"/>
+                                    <outlet property="foregroundView" destination="beD-TV-t6O" id="plV-lW-wqY"/>
+                                    <outlet property="foregroundViewTop" destination="Cm0-Mk-qiI" id="iam-rf-0og"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qxz-L2-iOy" id="ERQ-7b-0up"/>
+                            <outlet property="delegate" destination="Qxz-L2-iOy" id="wiy-fR-dBH"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="790"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="background"/>
+                    </userDefinedRuntimeAttributes>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3Y-jX-6aC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="1028"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="750" height="1874"/>
+    </resources>
+</document>
